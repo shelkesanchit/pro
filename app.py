@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 import requests
@@ -6,10 +7,10 @@ app = Flask(__name__)
 CORS(app)
 
 # Configuration
-BASE_API_URL = os.getenv("BASE_API_URL")
-LANGFLOW_ID = os.getenv("LANGFLOW_ID")
-FLOW_ID = os.getenv("FLOW_ID")
-TOKEN = os.getenv("TOKEN")
+LANGFLOW_ID = os.getenv('LANGFLOW_ID')
+FLOW_ID = os.getenv('FLOW_ID')
+BASE_API_URL = os.getenv('BASE_API_URL')
+TOKEN = os.getenv('TOKEN')
 
 @app.route('/')
 def home():
